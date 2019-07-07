@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function rooms() {
+export default function Rooms() {
   return <div>hello from rooms page</div>;
 }
