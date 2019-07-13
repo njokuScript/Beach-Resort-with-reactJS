@@ -9,15 +9,17 @@ export default class RoomProvider extends Component {
     featuredRooms: [],
     loading: true
   };
-  //getData
 
+  ///getData
   componentDidMount() {
+    //this.getData
     let rooms = this.formatData(items);
     let featuredRooms = rooms.filter(room => room.featured === true);
+    //change the value of the rooms, featured rooms and sorted rooms
     this.setState({
       rooms,
       featuredRooms,
-      sortedRoom: rooms,
+      sortedRooms: rooms,
       loading: false
     });
   }
@@ -31,8 +33,9 @@ export default class RoomProvider extends Component {
     });
     return tempItems;
   }
+  // this will get the rooms info in database
   getRoom = slug => {
-    let tempRooms = { ...this.state.rooms };
+    let tempRooms = [...this.state.rooms];
     const room = tempRooms.find(room => room.slug === slug);
     return room;
   };

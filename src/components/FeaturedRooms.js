@@ -5,6 +5,7 @@ import Room from "./Room";
 import Title from "./Title";
 export class FeaturedRooms extends Component {
   static contextType = RoomContext;
+  //get the data from the featured rooms
 
   render() {
     let { loading, featuredRooms: rooms } = this.context;
